@@ -23,6 +23,27 @@ body::before {
   z-index: -1;
 }
 
+.side-image {
+  
+  height: 100%;
+  max-height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.side-image.left {
+  left: 0;
+}
+
+.side-image.right {
+  right: 0;
+}
+
+
+
 /* TIEŇ PRE LEPŠIU ČITATEĽNOSŤ */
 h1, h2, p, label, nav a {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
@@ -53,20 +74,54 @@ nav a {
 
 /* Hero sekcia */
 .hero {
-  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-image: url("SushiImage.jpeg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #111;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 0px 0; /* voľné miesto hore a dole */
-  background-color: #000; /* voliteľné: pozadie okolo obrázka */
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  overflow: hidden; /* toto skryje všetko mimo .hero */
 }
 
-.hero img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
+.side-image {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 60px;
+  object-fit: cover;
+  z-index: 0;
 }
+
+.side-image.left {
+  left: 0;
+}
+
+.side-image.right {
+  right: 0;
+}
+.sticky-side {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: auto;
+  z-index: 0;
+}
+
+.sticky-left {
+  left: 0;
+}
+
+.sticky-right {
+  right: 0;
+}
+
+
 
 
 
